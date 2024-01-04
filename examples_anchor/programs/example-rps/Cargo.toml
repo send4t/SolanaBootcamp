@@ -1,12 +1,12 @@
 [package]
-name = "example3"
+name = "example2"
 version = "0.1.0"
 description = "Created with Anchor"
 edition = "2018"
 
 [lib]
 crate-type = ["cdylib", "lib"]
-name = "example3"
+name = "example2"
 
 [features]
 no-entrypoint = []
@@ -16,5 +16,7 @@ cpi = ["no-entrypoint"]
 default = []
 
 [dependencies]
-anchor-lang = "0.24.2"
+anchor-lang = "0.29.0"
+num-traits = "0.2"
+num-derive = "0.3"
 

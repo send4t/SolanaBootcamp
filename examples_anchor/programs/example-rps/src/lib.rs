@@ -5,7 +5,7 @@ use anchor_lang::solana_program::hash::Hash;
 use self::Hand::*;
 use self::HandResult::*;
 
-declare_id!("5521eQoUE17iVGZXCwwGApaF6qExq2hkYVviETpfaXQE");
+declare_id!("6NFEJ9qaX3CTRHDxD7nETJYSRq9emLNQJ4o4D1xyMJfc");
 
 #[program]
 mod example2 {

@@ -1,6 +1,6 @@
 use anchor_lang::prelude::*;
 
-declare_id!("BG8eNGD8vvPpegz6NojiFS2n6yPHV5yt9LJngp1QCkFf");
+declare_id!("F6SL4uZqqgaeorbx8dAuiRsKavzdqx1d87xxZ6yngpHn");
 
 #[program]
 mod example3 {
@@ -50,12 +50,13 @@ mod example3 {
     }
 
     // Winning answer gets validated and stored in the question PDA
-    pub fn tally(ctx: Context<Tally>) -> Result<()> {   
+    pub fn tally<'info>(ctx: Context<'_, '_, 'info, 'info, Tally>) -> Result<()> {
+
 
         let question: &mut Account<Question> = &mut ctx.accounts.question;        
 
         // All of the acounts not explicitely mentioned in the Tally context
-        let answers: Vec<AccountInfo> = ctx.remaining_accounts.to_vec();
+        let answers: &'info [AccountInfo] = ctx.remaining_accounts;
         let mut winner: (u32, u8) = (0,0);            
 
         msg!("Receieved {:?} answers accounts",answers.len());
